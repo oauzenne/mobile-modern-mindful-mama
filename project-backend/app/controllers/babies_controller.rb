@@ -1,0 +1,4 @@
+class BabiesController < ApplicationController
+
+    
+end

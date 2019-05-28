@@ -1,0 +1,2 @@
+class CommonProb < ApplicationRecord
+end
