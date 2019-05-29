@@ -1,5 +1,5 @@
 class MilkingsController < ApplicationController
-    skip_before_action :verify_authenticity_token
+    before_action :define_current_milking
     def index
         render json: Milking.all
     end
@@ -9,8 +9,11 @@ class MilkingsController < ApplicationController
     end
 
     def create
-        milking = Milking.create(milking_params)
-        render json: milking, methods: [ :url ]
+        milking = Milking.new(milking_params)
+        milking.mother = current_user
+        milking.save
+        # render json: milking, methods: [ :url ]
+        render json: milking
     end
 
     def index
@@ -52,8 +55,9 @@ class MilkingsController < ApplicationController
 
     private
     def milking_params
-        params.require(:milking).permit(:mother_id, :title, :description, :likes, :duration, :created_at, :milkingFile)
-    def current_milking
+        params.permit(:mother_id, :ounces, :date, :time)
+    end
+        def current_milking
         @current_milking
     end
 end

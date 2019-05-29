@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :milkings
   resources :locations
 
-  post '/login', to: 'users#authenticate'
+  post '/login', to: 'mothers#authenticate'
 
 end

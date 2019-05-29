@@ -2,6 +2,7 @@ class MothersController < ApplicationController
     skip_before_action  :logged_in?, only: [ :authenticate ]
     
     def create
+        byebug
         mother = Mother.create(mother_params)
         render json: mother
     end
@@ -15,7 +16,7 @@ class MothersController < ApplicationController
     end
 
     def authenticate
-        mother = Mother.find_by(name: params[:name])
+        mother = Mother.find_by(email: params[:email])
         
         if mother.authenticate(params[:password])
             render json: mother, methods: [ :auth_token ]
