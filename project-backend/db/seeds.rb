@@ -17,6 +17,6 @@ olivia = Mother.create(name: "Olivia", email: "oauzenne@gmail.com", password: "p
 
 marley = Baby.create(name: "Marley", mother: olivia, photo: "https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/56575967_2611266608944987_6784832186215301120_o.jpg?_nc_cat=110&_nc_oc=AQk5Ys6WIEyRf5xDNehQEUhqBZoLgY_hVXh_AV2SUrW6rIXRJAYC50S8CEN6zEi2a0M&_nc_ht=scontent-dfw5-1.xx&oh=1f619b149caf99fc4100494ac03bd42d&oe=5D781EEE")
 
-mar_one_nine_am = Milking.create(date: "March 1, 2019", mother: olivia, time: "9:00am", ounces: "8oz")
+mar_one_nine_am = Milking.create(date: "Tue May 25 2019", mother: olivia, time: "9:00am", ounces: "8")
 
 galleria_mall = Location.create(name: "Galleria Mall", where: "Galleria", photo: "")
